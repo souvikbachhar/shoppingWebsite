@@ -1,0 +1,30 @@
+<div ng-app="adminApp" ng-controller="modifycategoryCtrl" >
+<h3>Modify Category</h3>
+	<div>
+	<form>
+		<p>
+			<label style="width:200px">Category ID:</label> <label style="width:200px" ng-show="modcategory.categorysearchresult">{{modcategory.id}}</label><input type="text" ng-model="modcategory.id" ng-show="!modcategory.categorysearchresult" required>
+		</p>
+		<p>
+			 <span style="color:red;" ng-bind="modcategory.findstatus"></span>
+		</p>
+		<p>
+			<button type="submit" ng-click="categorysearch(modcategory)" ng-show="!modcategory.categorysearchresult">Search</button>
+		</p>
+	</form>		
+	</div>
+		<div ng-show="modcategory.categorysearchresult" >
+		<form>
+		<p >
+			<label style="width:200px" >Category Name:</label><input type="text" ng-model="modcategory.name" required>
+		</p>
+		<p>
+			 <span style="color:red;" ng-bind="modcategory.status"></span>
+		</p>
+		<p>
+			<button ng-click="modifycategory(modcategory)">Update</button>
+			<button ng-click="reset(modifycategory)" ng-click="categorysearch(modcategory)">Search New</button>
+		</p>
+		</form>
+		</div>
+	</div>

@@ -1,0 +1,29 @@
+<div ng-app="adminApp" ng-controller="addproductCtrl" >
+	<h3>Add new Product</h3>
+	<div>
+	<form>
+		<p>
+			<label style="width:200px">Product ID:</label> <input  style="width:200px" type="text" ng-model="addprod.id" required>
+			
+			<label style="width:200px">Category :</label>
+  				<select style="width:200px" ng-model="addprod.category" required >
+  				<option ng-repeat="x in categories">{{x}}</option>
+  				</select>	
+		</p>
+		
+	
+		<p >
+			<label style="width:200px" >Product Name:</label><input  style="width:200px" type="text" ng-model="addprod.pname" required>
+			<label style="width:200px" >Product Price:</label> <input  style="width:200px" type="number" ng-model="addprod.price" required >
+		</p>
+		 <label style="width:200px" >Upload Image:</label><input type = "file" file-model = "myFile"/>
+		<p>
+			 <span style="color:red;" ng-bind="addprod.status"></span>
+		</p>
+		<p>
+			<button ng-click="addproduct(addprod)">Add Product</button>
+			<button ng-click="reset(addprod)">Reset</button>
+		</p>
+		</form>
+		</div>
+	</div>

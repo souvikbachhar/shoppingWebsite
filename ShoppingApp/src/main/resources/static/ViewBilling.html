@@ -1,0 +1,15 @@
+<div ng-app="adminApp" ng-controller="viewcustomer" >
+<h3>View Billing Data-Date wise</h3>
+<br>
+	<table border="1">
+	
+	<th>Date</th>
+	<th>Total Amount</th>
+	<tr ng-repeat="x in sales">
+	<td >{{x.date}}</td>
+	<td >{{x.totalPrice}}</td>
+	</tr>
+	</table>
+	
+	<div id="chart-container">FusionCharts will render here</div>
+</div>

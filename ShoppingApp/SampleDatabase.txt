@@ -1,0 +1,230 @@
+--------------------------------------------------------
+--  File created - Friday-April-27-2018   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table SHOPCARTORDERS
+--------------------------------------------------------
+
+  CREATE TABLE "TOPGEAR"."SHOPCARTORDERS" 
+   (	"ORDERID" NUMBER, 
+	"ORDERUSER" VARCHAR2(100 BYTE), 
+	"ORDERPRODUCTS" VARCHAR2(1000 BYTE), 
+	"TOTALPRICE" NUMBER, 
+	"ORDERDATE" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into TOPGEAR.SHOPCARTORDERS
+SET DEFINE OFF;
+Insert into TOPGEAR.SHOPCARTORDERS (ORDERID,ORDERUSER,ORDERPRODUCTS,TOTALPRICE,ORDERDATE) values (3,'souvik1','abc',10000,'26-APR-18');
+Insert into TOPGEAR.SHOPCARTORDERS (ORDERID,ORDERUSER,ORDERPRODUCTS,TOTALPRICE,ORDERDATE) values (4,'souvik1','[{"productCategory":"TV","productId":"2","productName":"LG","productPrice":999,"$$hashKey":"object:9","isDisabled":true,"quantity":1,"status":true},{"productCategory":"Mobile","productId":"1","productName":"Mi A1","productPrice":9999,"$$hashKey":"object:8","isDisabled":true,"quantity":1,"status":true}]',10998,'27-APR-18');
+Insert into TOPGEAR.SHOPCARTORDERS (ORDERID,ORDERUSER,ORDERPRODUCTS,TOTALPRICE,ORDERDATE) values (1,'souvik1','abc',10000,'27-APR-18');
+Insert into TOPGEAR.SHOPCARTORDERS (ORDERID,ORDERUSER,ORDERPRODUCTS,TOTALPRICE,ORDERDATE) values (2,'souvik1','abc',10000,'27-APR-18');
+--------------------------------------------------------
+--  DDL for Index SHOPCARTORDERS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TOPGEAR"."SHOPCARTORDERS_PK" ON "TOPGEAR"."SHOPCARTORDERS" ("ORDERID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table SHOPCARTORDERS
+--------------------------------------------------------
+
+  ALTER TABLE "TOPGEAR"."SHOPCARTORDERS" ADD CONSTRAINT "SHOPCARTORDERS_PK" PRIMARY KEY ("ORDERID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "TOPGEAR"."SHOPCARTORDERS" MODIFY ("ORDERID" NOT NULL ENABLE);
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+***********************************************************************************************************************************************
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------
+--  File created - Friday-April-27-2018   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table SHOPPINGCATEGORY
+--------------------------------------------------------
+
+  CREATE TABLE "TOPGEAR"."SHOPPINGCATEGORY" 
+   (	"CATEGORYID" VARCHAR2(50 BYTE), 
+	"CATEGORYNAME" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into TOPGEAR.SHOPPINGCATEGORY
+SET DEFINE OFF;
+Insert into TOPGEAR.SHOPPINGCATEGORY (CATEGORYID,CATEGORYNAME) values ('1','Mobile');
+Insert into TOPGEAR.SHOPPINGCATEGORY (CATEGORYID,CATEGORYNAME) values ('2','HeadPhones');
+Insert into TOPGEAR.SHOPPINGCATEGORY (CATEGORYID,CATEGORYNAME) values ('3','TV');
+Insert into TOPGEAR.SHOPPINGCATEGORY (CATEGORYID,CATEGORYNAME) values ('4','Laptop');
+--------------------------------------------------------
+--  DDL for Index PK_CATEGORY
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TOPGEAR"."PK_CATEGORY" ON "TOPGEAR"."SHOPPINGCATEGORY" ("CATEGORYID", "CATEGORYNAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index PK_CATEGORY_UNIQUE
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TOPGEAR"."PK_CATEGORY_UNIQUE" ON "TOPGEAR"."SHOPPINGCATEGORY" ("CATEGORYID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index PK_CATEGORY_UNIQUE2
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TOPGEAR"."PK_CATEGORY_UNIQUE2" ON "TOPGEAR"."SHOPPINGCATEGORY" ("CATEGORYNAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table SHOPPINGCATEGORY
+--------------------------------------------------------
+
+  ALTER TABLE "TOPGEAR"."SHOPPINGCATEGORY" ADD CONSTRAINT "PK_CATEGORY_UNIQUE2" UNIQUE ("CATEGORYNAME")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "TOPGEAR"."SHOPPINGCATEGORY" ADD CONSTRAINT "PK_CATEGORY_UNIQUE" UNIQUE ("CATEGORYID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "TOPGEAR"."SHOPPINGCATEGORY" ADD CONSTRAINT "PK_CATEGORY" PRIMARY KEY ("CATEGORYID", "CATEGORYNAME")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+
+  
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+***********************************************************************************************************************************************
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------
+--  File created - Friday-April-27-2018   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table SHOPPINGPRODUCTS
+--------------------------------------------------------
+
+  CREATE TABLE "TOPGEAR"."SHOPPINGPRODUCTS" 
+   (	"PRODUCTID" VARCHAR2(100 BYTE), 
+	"PRODUCTCATEGORY" VARCHAR2(100 BYTE), 
+	"PRODUCTNAME" VARCHAR2(100 BYTE), 
+	"PRODUCTPRICE" NUMBER, 
+	"PRODUCTIMAGE" BLOB
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" 
+ LOB ("PRODUCTIMAGE") STORE AS BASICFILE (
+  TABLESPACE "SYSTEM" ENABLE STORAGE IN ROW CHUNK 8192 RETENTION 
+  NOCACHE LOGGING 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)) ;
+REM INSERTING into TOPGEAR.SHOPPINGPRODUCTS
+SET DEFINE OFF;
+Insert into TOPGEAR.SHOPPINGPRODUCTS (PRODUCTID,PRODUCTCATEGORY,PRODUCTNAME,PRODUCTPRICE) values ('3','Headphones','JBL',999);
+Insert into TOPGEAR.SHOPPINGPRODUCTS (PRODUCTID,PRODUCTCATEGORY,PRODUCTNAME,PRODUCTPRICE) values ('1','Mobile','Mi A1',9999);
+Insert into TOPGEAR.SHOPPINGPRODUCTS (PRODUCTID,PRODUCTCATEGORY,PRODUCTNAME,PRODUCTPRICE) values ('2','TV','LG',999);
+--------------------------------------------------------
+--  DDL for Index SHOPPINGPRODUCTS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TOPGEAR"."SHOPPINGPRODUCTS_PK" ON "TOPGEAR"."SHOPPINGPRODUCTS" ("PRODUCTID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table SHOPPINGPRODUCTS
+--------------------------------------------------------
+
+  ALTER TABLE "TOPGEAR"."SHOPPINGPRODUCTS" ADD CONSTRAINT "SHOPPINGPRODUCTS_PK" PRIMARY KEY ("PRODUCTID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "TOPGEAR"."SHOPPINGPRODUCTS" MODIFY ("PRODUCTID" NOT NULL ENABLE);
+
+  
+    
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+***********************************************************************************************************************************************
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------
+--  File created - Friday-April-27-2018   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table SHOPUSERS
+--------------------------------------------------------
+
+  CREATE TABLE "TOPGEAR"."SHOPUSERS" 
+   (	"USERID" VARCHAR2(100 BYTE), 
+	"PASSWORD" VARCHAR2(100 BYTE), 
+	"USERTYPE" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into TOPGEAR.SHOPUSERS
+SET DEFINE OFF;
+Insert into TOPGEAR.SHOPUSERS (USERID,PASSWORD,USERTYPE) values ('souvik1','abc',0);
+Insert into TOPGEAR.SHOPUSERS (USERID,PASSWORD,USERTYPE) values ('souvikadmin','abcd',1);
+--------------------------------------------------------
+--  DDL for Index SHOPUSERS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TOPGEAR"."SHOPUSERS_PK" ON "TOPGEAR"."SHOPUSERS" ("USERID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table SHOPUSERS
+--------------------------------------------------------
+
+  ALTER TABLE "TOPGEAR"."SHOPUSERS" ADD CONSTRAINT "SHOPUSERS_PK" PRIMARY KEY ("USERID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+  ALTER TABLE "TOPGEAR"."SHOPUSERS" MODIFY ("USERTYPE" NOT NULL ENABLE);
+  ALTER TABLE "TOPGEAR"."SHOPUSERS" MODIFY ("PASSWORD" NOT NULL ENABLE);
+  ALTER TABLE "TOPGEAR"."SHOPUSERS" MODIFY ("USERID" NOT NULL ENABLE);

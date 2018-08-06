@@ -1,0 +1,16 @@
+<div ng-app="adminApp" ng-controller="viewcustomer" >
+<h3>View Customer order status</h3>
+<br>
+	<table border="1">
+	
+	<th>OrderID</th>
+	<th>Ordered BY</th>
+	<th>Total Amount</th>
+	
+	<tr ng-repeat="x in orderproducts">
+	<td >{{x.orderID}}</td>
+	<td >{{x.orderUser}}</td>
+	<td >{{x.totalPrice}}</td>
+	</tr>
+	</table>
+</div>

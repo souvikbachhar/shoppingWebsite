@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>A Simple example of Get, Set and Clear Cookie in AngularJS</title>
+</head>
+<body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js"></script>
+    <script src="./script/app.js"></script>
+    <div ng-app="myApp" ng-controller="CookiesController">
+        Username:
+        <input type="text" ng-model="username" />
+        <br />
+        <br />
+        <input type="button" value="Set Cookies" ng-click="SetCookies()" />
+        <input type="button" value="Get Cookies" ng-click="GetCookies()" />
+        <input type="button" value="Clear Cookies" ng-click="ClearCookies()" />
+    </div>
+</body>
+</html>

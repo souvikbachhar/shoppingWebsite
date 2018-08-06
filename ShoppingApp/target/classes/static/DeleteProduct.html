@@ -1,0 +1,37 @@
+<div ng-app="adminApp" ng-controller="modifyprodCtrl" >
+<h3>Delete Product</h3>
+	<div>
+	<form>
+		<p>
+			<label style="width:200px">Product ID:</label> <label style="width:200px" ng-show="modprod.categorysearchresult">{{modprod.id}}</label><input type="text" ng-model="modprod.id" ng-show="!modprod.categorysearchresult" required>
+		</p>
+		<p>
+			 <span style="color:red;" ng-bind="modprod.findstatus"></span>
+		</p>
+		<p>
+			<button type="submit" ng-click="productsearch(modprod)" ng-show="!modprod.categorysearchresult">Search</button>
+		</p>
+		<p>
+			 <span style="color:red;" ng-bind="modprod.status"></span>
+		</p>
+	</form>		
+	</div>
+		<div ng-show="modprod.categorysearchresult" >
+		<form>
+		<p >
+			<label style="width:200px" >Product Name:</label><label>{{modprod.name}}</label>
+		</p>
+		<p >
+			<label style="width:200px" >Product Category:</label><label>{{modprod.category}}</label>	
+		</p>
+		<p >
+			<label style="width:200px" >Product Price:</label><label>{{modprod.price}}</label>	
+		</p>
+		
+		<p>
+			<button ng-click="deleteproduct(modprod)">Delete</button>
+			<button ng-click="reset(modprod)" >Search New</button>
+		</p>
+		</form>
+		</div>
+	</div>

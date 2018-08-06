@@ -1,0 +1,17 @@
+<div ng-app="adminApp" ng-controller="addnewcatCtrl" >
+<h3>Add new Category</h3>
+<form>
+		<p>
+			<label style="width:200px">Category ID:</label> <input type="text" ng-model="newcategory.id" required>
+		</p>
+		<p>
+			<label style="width:200px">Category Name:</label><input type="text" ng-model="newcategory.name" required>
+		</p>
+		<p>
+			 <span style="color:red;" ng-bind="newcategory.status"></span>
+		</p>
+		<p>
+			<button type="submit" ng-click="addnewcat(newcategory)">Submit</button>
+		</p>
+	</form>	
+	</div>
